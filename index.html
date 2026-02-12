@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine’s Day, My Baby My Baby ❤️</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL STYLES */
+:root {
+  --pink: #ffb6c1;
+  --rose: #ff8fa3;
+  --blush: #ffe4ec;
+  --white: #fff;
+  --text: #72224c;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--blush), var(--white));
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* FLOATING HEARTS & FLOWERS */
+.floating {
+  position: fixed;
+  font-size: 24px;
+  opacity: 0.7;
+  animation: floatUp linear infinite;
+  pointer-events: none;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: var(--pink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 999;
+}
+#intro h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: white;
+}
+#openBtn {
+  margin-top: 20px;
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT */
+#mainContent { display: none; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: var(--rose);
+  margin-bottom: 10px;
+}
+.hero p { font-size: 1.2rem; max-width: 700px; margin: auto; }
+
+/* CIRCULAR ROTATING GALLERY */
+.gallery {
+  text-align: center;
+  padding: 60px 20px;
+}
+.gallery h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.6rem;
+  color: var(--rose);
+  margin-bottom: 30px;
+}
+.rotating-gallery {
+  width: 280px;
+  height: 280px;
+  margin: auto;
+  position: relative;
+}
+.rotating-gallery img {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  top: 25%;
+  left: 25%;
+  object-fit: cover;
+  animation: rotateAll 12s infinite linear;
+  transform-origin: 50% 120%;
+}
+.rotating-gallery img:nth-child(1) { animation-delay: -0s; }
+.rotating-gallery img:nth-child(2) { animation-delay: -3s; }
+.rotating-gallery img:nth-child(3) { animation-delay: -6s; }
+.rotating-gallery img:nth-child(4) { animation-delay: -9s; }
+
+@keyframes rotateAll { 100% { transform: rotate(-360deg); } }
+
+/* LOVE NOTE */
+.love-note {
+  padding: 90px 20px;
+  text-align: center;
+}
+.love-note h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: var(--rose);
+  margin-bottom: 20px;
+}
+.typing {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.2rem;
+  background: var(--white);
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+  min-height: 140px;
+}
+
+/* COUNTDOWN */
+.countdown {
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 1.4rem;
+}
+.countdown span { color: var(--rose); font-weight: bold; }
+
+/* MUSIC BUTTON */
+#musicBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--rose);
+  color: white;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating backgrounds -->
+<script>
+const shapes = ['💗','🌸','🌹','💕','🌺'];
+for(let i=0;i<30;i++){
+  let el = document.createElement("div");
+  el.className = "floating";
+  el.innerText = shapes[Math.floor(Math.random()*shapes.length)];
+  el.style.left = Math.random()*100 + "vw";
+  el.style.animationDuration = (5 + Math.random()*5) + "s";
+  el.style.fontSize = (20 + Math.random()*30) + "px";
+  document.body.appendChild(el);
+}
+</script>
+
+<!-- Intro -->
+<div id="intro">
+  <h1>Happy Valentine’s Day, Nellie ❤️</h1>
+  <button id="openBtn">Click to Open My Heart 💖</button>
+</div>
+
+<!-- Background music -->
+<audio id="bgMusic" loop>
+  <source src="background-music.mp3.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<button id="musicBtn">🎵 Play Music</button>
+
+<!-- Main content -->
+<div id="mainContent">
+
+<section class="hero">
+  <h1>Happy Valentine’s Day, Nellie ❤️</h1>
+  <p>Every moment with you is special, and this little page is made with all my love just for you.</p>
+</section>
+
+<section class="gallery">
+  <h2>Our Beautiful Moments 🌼</h2>
+  <div class="rotating-gallery">
+    <img src="photo1.jpg.JPEG" alt="">
+    <img src="photo2.jpg.JPEG" alt="">
+    <img src="photo3.jpg.JPEG" alt="">
+    <img src="photo4.jpg.JPEG" alt="">
+  </div>
+</section>
+
+<section class="love-note">
+  <h2>A Love Letter 💌</h2>
+  <div class="typing" id="typingText"></div>
+</section>
+
+<section class="countdown">
+  Counting the moments:<br>
+  <span id="timer"></span>
+</section>
+
+<footer>Lovingly yours, Emmanuel 💗</footer>
+
+</div>
+
+<script>
+// Intro button
+document.getElementById("openBtn").onclick = ()=>{
+  document.getElementById("intro").style.display="none";
+  document.getElementById("mainContent").style.display="block";
+};
+
+// Music control
+const music = document.getElementById("bgMusic");
+const mBtn = document.getElementById("musicBtn");
+mBtn.onclick = ()=>{
+  if(music.paused){ music.play(); mBtn.textContent="🔇 Pause Music"; }
+  else{ music.pause(); mBtn.textContent="🎵 Play Music"; }
+};
+
+// Typing effect
+const msg = "You make my days brighter, my heart lighter, and my world more beautiful. Thank you for being you, Nellie. I love you more than words can say 💖";
+let idx=0;
+function type(){ if(idx<msg.length){
+  document.getElementById("typingText").innerHTML += msg.charAt(idx++);
+  setTimeout(type, 40);
+}} type();
+
+// Countdown timer
+const target = new Date("2026-02-15T00:00:00");
+setInterval(()=>{
+  const now = new Date();
+  const diff = target - now;
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff/(1000*60*60))%24);
+  const m=Math.floor((diff/60000)%60);
+  const s=Math.floor((diff/1000)%60);
+  document.getElementById("timer").innerHTML = d+"d "+h+"h "+m+"m "+s+"s";
+},1000);
+
+</script>
+
+</body>
+</html>
